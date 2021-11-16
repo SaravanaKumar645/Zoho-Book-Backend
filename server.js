@@ -9,7 +9,7 @@ fastify.register(require("fastify-jwt"), {
 });
 fastify.register(require("./fastroute.js/auth"));
 fastify.register(require("./fastmiddleware.js/authmiddleware"));
-
+// /heroku logs -a zoho-books-server --tail
 // Connect to DB
 mongoose
   .connect(
@@ -132,7 +132,7 @@ fastify.register(require("fastify-swagger"), swagger.options);
 const start = async () => {
   try {
     // process.env.PORT,'0.0.0.0'
-    await fastify.listen(4000);
+    await fastify.listen(process.env.PORT || 4000, "0.0.0.0");
     fastify.swagger();
     fastify.log.info(`listening on ${fastify.server.address().port}`);
   } catch (err) {
