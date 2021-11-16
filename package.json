@@ -1,0 +1,27 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "client": "cd .. && cd client && npm run dev",
+    "start": "concurrently \"npm run dev\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "concurrently": "^6.4.0",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.22.1",
+    "fastify-cors": "^6.0.2",
+    "fastify-jwt": "^3.2.1",
+    "fastify-nodemailer": "^5.0.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-swagger": "^2.6.0",
+    "mongoose": "^5.13.11",
+    "nodemon": "^2.0.14"
+  }
+}
