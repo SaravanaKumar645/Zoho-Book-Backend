@@ -18,15 +18,15 @@ const routes = [
     handler: estimateController.addEstimate,
   },
   {
-        method: 'PUT',
-        url: '/api/upadteestimates/:id',
-        handler: estimateController.updateEstimate
-    },
-    {
-        method: 'DELETE',
-        url: '/api/edeletestimates/:id',
-        handler: estimateController.deleteEstimate
-    }
+    method: "PUT",
+    url: "/api/upadteestimates/:id",
+    handler: estimateController.updateEstimate,
+  },
+  {
+    method: "DELETE",
+    url: "/api/edeletestimates/:id",
+    handler: estimateController.deleteEstimate,
+  },
 ];
 
 module.exports = routes;

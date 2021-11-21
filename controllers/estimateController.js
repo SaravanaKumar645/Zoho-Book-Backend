@@ -7,7 +7,7 @@ const Estimate = require("../models/Estimate");
 // Get all cars
 exports.getEstimate = async (req, res) => {
   try {
-    const estimates = await Estimate.find({user_id:req.params.userid});
+    const estimates = await Estimate.find({ user_id: req.params.userid });
     return estimates;
   } catch (err) {
     throw boom.boomify(err);
@@ -38,25 +38,27 @@ exports.addEstimate = async (req, res) => {
 // To update an estimate by id
 
 exports.updateEstimate = async (req, res) => {
-    try {
-        const id = req.params.id
-        const estimate = req.body
-        const { ...updateData } = estimate
-        const update = await Estimate.findByIdAndUpdate(id, updateData, { new: true })
-        return update
-    } catch (err) {
-        throw boom.boomify(err)
-    }
-}
+  try {
+    const id = req.params.id;
+    const estimate = req.body;
+    const { ...updateData } = estimate;
+    const update = await Estimate.findByIdAndUpdate(id, updateData, {
+      new: true,
+    });
+    return update;
+  } catch (err) {
+    throw boom.boomify(err);
+  }
+};
 
 // To Delete estimate
 
 exports.deleteEstimate = async (req, res) => {
-    try {
-        const id = req.params.id
-        const estimate = await Estimate.findByIdAndRemove(id)
-        return estimate
-    } catch (err) {
-        throw boom.boomify(err)
-    }
-}
+  try {
+    const id = req.params.id;
+    const estimate = await Estimate.findByIdAndRemove(id);
+    return estimate;
+  } catch (err) {
+    throw boom.boomify(err);
+  }
+};

@@ -21,7 +21,7 @@ mongoose
 
 // Require the fastify framework and instantiate it
 
-fastify.register(fastifyCors, {});
+fastify.register(fastifyCors, { origin: "*" });
 // Import routes
 const Item = require("./routes/Item");
 const estimates = require("./routes/Estimate");
@@ -71,10 +71,8 @@ fastify.get("/", async (req, res) => {
 });
 fastify.register(require("fastify-nodemailer"), {
   pool: true,
-
   service: "gmail",
   secure: true,
-
   // use TLS
   auth: {
     user: "techpiratesteam@gmail.com",
